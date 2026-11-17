@@ -344,7 +344,7 @@ function DashboardView({ activeRuns, onRun, onView, onReport }: { activeRuns: Ex
         <SectionHeading eyebrow="ACTIVIDAD RECIENTE" title="Últimas ejecuciones" action="Ver historial" onAction={() => onView('history')} />
         <div className="panel table-panel"><RunTable rows={recent} onReport={onReport} /></div>
       </section>
-      <footer className="page-footer"><span>© 2025 Ficohsa · QA Automation Hub</span><span><span className="footer-indicator" />Todos los sistemas operativos</span></footer>
+      <footer className="page-footer"><span>© 2026 Ficohsa · QA Automation Hub</span><span><span className="footer-indicator" />Todos los sistemas operativos</span></footer>
     </div>
   )
 }
@@ -427,7 +427,7 @@ function ReportView({ run, onBack }: { run: Execution; onBack: () => void }) {
   return (
     <div className="page-stack">
       <button className="back-link" onClick={onBack}><ArrowRight size={15} className="back-arrow" />Volver al historial</button>
-      <div className="report-heading"><div><p className="section-eyebrow">REPORTE DE EJECUCIÓN · {run.id}</p><h1>{run.project}</h1><p>Ejecutado el 17 nov, 2025 a las 9:42 a. m. <span className="meta-divider">·</span> Por {run.user}</p></div><StatusBadge status={run.status} /></div>
+      <div className="report-heading"><div><p className="section-eyebrow">REPORTE DE EJECUCIÓN · {run.id}</p><h1>{run.project}</h1><p>Ejecutado el 17 nov, 2026 a las 9:42 a. m. <span className="meta-divider">·</span> Por {run.user}</p></div><StatusBadge status={run.status} /></div>
       <div className="report-overview-grid">
         <section className="panel result-panel"><div className="report-section-title"><div><h2>Resumen de resultados</h2><p>Distribución de casos de prueba</p></div><button className="icon-button" aria-label="Más acciones"><MoreHorizontal size={19} /></button></div><div className="results-content"><div className="donut-chart" style={{ background: `conic-gradient(#10b981 0 ${(run.passed / total) * 100}%, #ef4444 ${(run.passed / total) * 100}% ${((run.passed + run.failed) / total) * 100}%, #dbe4ee ${((run.passed + run.failed) / total) * 100}% 100%)` }}><div><strong>{total}</strong><span>casos</span></div></div><div className="result-legend"><div><span className="legend-dot passed-dot" /><span>Passed</span><strong>{run.passed}</strong></div><div><span className="legend-dot failed-dot" /><span>Failed</span><strong>{run.failed}</strong></div><div><span className="legend-dot skipped-dot" /><span>Skipped</span><strong>{run.skipped}</strong></div></div></div><div className="result-footnote"><CheckCircle2 size={15} />{run.failed === 0 ? 'Todos los casos críticos pasaron.' : `${Math.round((run.passed / total) * 100)}% de los casos pasaron correctamente.`}</div></section>
         <section className="panel parameters-panel"><div className="report-section-title"><div><h2>Parámetros de ejecución</h2><p>Configuración usada en el pipeline</p></div><Settings2 size={18} className="muted-icon" /></div><div className="parameter-list"><div><span><GitBranch size={15} />Rama</span><strong>{run.branch}</strong></div><div><span><Globe2 size={15} />Ambiente</span><strong className={`environment-tag env-${run.environment.toLowerCase()}`}>{run.environment}</strong></div><div><span><ListFilter size={15} />Suite / Tags</span><strong className="parameter-code">{run.suiteTag}</strong></div><div><span><Monitor size={15} />Runner</span><strong>{run.runner}</strong></div><div><span><Clock3 size={15} />Duración</span><strong>{run.duration}</strong></div></div></section>
