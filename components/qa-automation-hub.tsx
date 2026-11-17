@@ -344,7 +344,7 @@ function DashboardView({ activeRuns, onRun, onView, onReport }: { activeRuns: Ex
         <SectionHeading eyebrow="ACTIVIDAD RECIENTE" title="Últimas ejecuciones" action="Ver historial" onAction={() => onView('history')} />
         <div className="panel table-panel"><RunTable rows={recent} onReport={onReport} /></div>
       </section>
-      <footer className="page-footer"><span>© 2026 Ficohsa · QA Automation Hub</span><span><span className="footer-indicator" />Todos los sistemas operativos</span></footer>
+      <footer className="page-footer"><span>© 2026 FICOHSA · Portal de automatizaciones</span><span><span className="footer-indicator" />Todos los sistemas operativos</span></footer>
     </div>
   )
 }
@@ -535,15 +535,15 @@ export default function QaAutomationHub() {
     <div className="app-shell">
       {mobileNavOpen && <button className="mobile-scrim" aria-label="Cerrar navegación" onClick={() => setMobileNavOpen(false)} />}
       <aside className={`sidebar ${mobileNavOpen ? 'sidebar-open' : ''}`}>
-        <div className="brand-lockup"><BrandMark /><div><strong>QA Automation</strong><span>SELF-SERVICE HUB</span></div><button className="sidebar-close icon-button" onClick={() => setMobileNavOpen(false)} aria-label="Cerrar menú"><X size={18} /></button></div>
+        <div className="brand-lockup"><BrandMark /><div><strong>Portal de automatizaciones</strong><span>FICOHSA</span></div><button className="sidebar-close icon-button" onClick={() => setMobileNavOpen(false)} aria-label="Cerrar menú"><X size={18} /></button></div>
         <div className="workspace-switcher"><span className="workspace-icon"><Terminal size={16} /></span><span><strong>Ficohsa Digital</strong><small>Workspace QA</small></span><ChevronDown size={15} className="workspace-chevron" /></div>
         <div className="sidebar-label">MENÚ PRINCIPAL</div>
         <nav className="main-navigation" aria-label="Navegación principal">{navItems.map((item) => <NavButton key={item.id} item={item} active={view === item.id} count={item.id === 'monitor' ? activeRuns.length : undefined} onClick={() => navigate(item.id)} />)}</nav>
-        <div className="sidebar-bottom"><div className="sidebar-help"><div className="help-icon"><Sparkles size={16} /></div><strong>¿Necesitas ayuda?</strong><p>Consulta la guía rápida para lanzar tus pruebas.</p><button onClick={() => setToastMessage('Guía rápida disponible próximamente')}>Ver guía<ArrowRight size={13} /></button></div><button className="sidebar-settings" onClick={() => setToastMessage('Configuración del workspace')}><Settings2 size={17} />Configuración<ChevronDown size={14} /></button><div className="sidebar-version"><span>QA AUTOMATION HUB</span><span>v2.4.0</span></div></div>
+        <div className="sidebar-bottom"><div className="sidebar-help"><div className="help-icon"><Sparkles size={16} /></div><strong>¿Necesitas ayuda?</strong><p>Consulta la guía rápida para lanzar tus pruebas.</p><button onClick={() => setToastMessage('Guía rápida disponible próximamente')}>Ver guía<ArrowRight size={13} /></button></div><button className="sidebar-settings" onClick={() => setToastMessage('Configuración del workspace')}><Settings2 size={17} />Configuración<ChevronDown size={14} /></button><div className="sidebar-version"><span>PORTAL DE AUTOMATIZACIONES</span><span>v2.4.0</span></div></div>
       </aside>
 
       <div className="main-column">
-        <header className="topbar"><div className="topbar-left"><button className="mobile-menu-button icon-button" onClick={() => setMobileNavOpen(true)} aria-label="Abrir menú"><Menu size={20} /></button><div className="breadcrumb"><span>QA Automation Hub</span><ArrowRight size={14} /><strong>{titleByView[view]}</strong></div></div><div className="topbar-right"><div className="infra-pill"><span className="infra-dot" /><span>Agentes Azure DevOps: <strong>3/4</strong> disponibles</span><ChevronDown size={13} /></div><button className="icon-button notification-button" aria-label="Notificaciones"><Bell size={18} /><span /></button><div className="topbar-divider" /><button className="profile-button"><span className="profile-avatar">JM</span><span className="profile-copy"><strong>Jeffer Martínez</strong><small>QA Lead</small></span><ChevronDown size={14} /></button></div></header>
+        <header className="topbar"><div className="topbar-left"><button className="mobile-menu-button icon-button" onClick={() => setMobileNavOpen(true)} aria-label="Abrir menú"><Menu size={20} /></button><div className="breadcrumb"><span>Portal de automatizaciones</span><ArrowRight size={14} /><strong>{titleByView[view]}</strong></div></div><div className="topbar-right"><div className="infra-pill"><span className="infra-dot" /><span>Agentes Azure DevOps: <strong>3/4</strong> disponibles</span><ChevronDown size={13} /></div><button className="icon-button notification-button" aria-label="Notificaciones"><Bell size={18} /><span /></button><div className="topbar-divider" /><button className="profile-button"><span className="profile-avatar">JM</span><span className="profile-copy"><strong>Jeffer Martínez</strong><small>QA Lead</small></span><ChevronDown size={14} /></button></div></header>
 
         <main className="main-content">
           {view === 'dashboard' && <DashboardView activeRuns={activeRuns} onRun={setSelectedSuite} onView={navigate} onReport={openReport} />}

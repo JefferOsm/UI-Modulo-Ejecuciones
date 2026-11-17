@@ -3,8 +3,8 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'QA Automation Hub | Ficohsa',
-  description: 'Centro de autoservicio para ejecutar, monitorear y analizar automatizaciones de calidad QA.',
+  title: 'Portal de automatizaciones | FICOHSA',
+  description: 'Portal de autoservicio para ejecutar, monitorear y analizar automatizaciones de calidad QA de FICOHSA.',
   generator: 'v0.app',
   icons: {
     icon: [
